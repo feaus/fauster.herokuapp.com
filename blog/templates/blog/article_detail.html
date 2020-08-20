@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="article-detail">
+    <div class="article">
+
+        <header id="article-header">
+            <h2>{{ articles.title }}</h2>
+        </header>
+
+        <div id="article-main">
+            <section id="article-content" class="article-main">
+                <span class="article-image main"><img src="{{ articles.image.url }}" alt="" /></span>
+                {% if articles.body_0 != "None" %}
+                <p>{{ articles.body_0|safe }}</p>
+                {% endif %}
+                {% if articles.body_image_0 != "default.png" %}
+                <span class="article-image main"><img src="{{ articles.body_image_0.url}}" /></span>
+                {% endif %}
+
+                {% if articles.body_1 != "None" %}
+                <p>{{ articles.body_1|safe }}</p>
+                {% endif %}
+                {% if articles.body_image_1 != "default.png" %}
+                <span class="article-image main"><img src="{{ articles.body_image_1.url}}" /></span>
+                {% endif %}
+
+                {% if articles.body_2 != "None" %}
+                <p>{{ articles.body_2|safe }}</p>
+                {% endif %}
+                {% if articles.body_image_2 != "default.png" %}
+                <span class="article-image main"><img src="{{ articles.body_image_2.url}}" /></span>
+                {% endif %}
+
+                {% if articles.body_3 != "None" %}
+                <p>{{ articles.body_3|safe }}</p>
+                {% endif %}
+                {% if articles.body_image_3 != "default.png" %}
+                <span class="article-image main"><img src="{{ articles.body_image_3.url}}" /></span>
+                {% endif %}
+
+                {% if articles.body_4 != "None" %}
+                <p>{{ articles.body_4|safe }}</p>
+                {% endif %}
+                {% if articles.body_image_4 != "default.png" %}
+                <span class="article-image main"><img src="{{ articles.body_image_4.url}}" /></span>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

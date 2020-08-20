@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static from static %}
+
+{% block content %}
+<!-- Banner -->
+    <div class="banner-container">
+        <div class="slideshow-container">
+            {% for banner in background %}
+            <section id="banner" class="{{ banner.html_class }}" style='background-position: center; background-image: url("{{ banner.thumb.url }}"); '>
+                <div class="content">
+                    <header id="slideshow">
+                        <div><h2>{{ banner.title }}</h2></div>
+                    </header>
+                </div>
+                <a href="#two" class="goto-next scrolly">Next</a>
+            </section>
+            {% endfor %}
+        </div>
+    </div>
+
+<!-- Two -->
+    <section id="two" class="spotlight style2 right" style='background-position: center; background-image: url("{{ images.0.thumb.url }}");'>
+        <span class="image fit main"><img src="{{ images.0.thumb.url }}" alt="" /></span>
+        <div class="content">
+            <header>
+                <h2>Renders exteriores</h2>
+                <p>___________</p>
+            </header>
+            <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+            <!--TODO: change text-->
+<!--            <ul class="actions">-->
+<!--                <li><a href="#" class="button">Learn More</a></li>-->
+<!--            </ul>-->
+        </div>
+        <a href="#three" class="goto-next scrolly">Next</a>
+    </section>
+
+<!-- Three -->
+    <section id="three" class="spotlight style3 left" style='background-position: center; background-image: url("{{ images.1.thumb.url }}");'>
+        <span class="image fit main bottom"><img src="{{ images.1.thumb.url }}" alt="" /></span>
+        <div class="content">
+            <header>
+                <h2>Renders interiores</h2>
+                <p>___________</p>
+            </header>
+            <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+            <!--TODO: change text-->
+<!--            <ul class="actions">-->
+<!--                <li><a href="#" class="button">Learn More</a></li>-->
+<!--            </ul>-->
+        </div>
+        <a href="#four" class="goto-next scrolly">Next</a>
+    </section>
+
+<!-- Two -->
+    <section id="four" class="spotlight style4 right" style='background-position: center; background-image: url("{{ images.2.thumb.url }}");'>
+        <span class="image fit main"><img src="{{ images.2.thumb.url }}" alt="" /></span>
+        <div class="content">
+            <header>
+                <h2>Animación arquitectónica</h2>
+                <p>___________</p>
+            </header>
+            <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+            <!--TODO: change text-->
+<!--            <ul class="actions">-->
+<!--                <li><a href="#" class="button">Learn More</a></li>-->
+<!--            </ul>-->
+        </div>
+        <a href="#contact" class="goto-next scrolly">Next</a>
+    </section>
+
+
+<!-- Contact -->
+    <section id="contact" class="main style3 secondary">
+        <div class="content">
+            <header>
+                <h2>Contacto</h2>
+            </header>
+            <div class="box">
+                <form method="post" action="#">
+                    {% csrf_token %}
+                    <div class="fields">
+                        <div class="field-half"><input type="text" name="name" placeholder="Nombre" /></div>
+                        <div class="field-half"><input type="email" name="email" placeholder="Email" /></div>
+                        <div class="field"><textarea name="message" placeholder="Mensaje" rows="6"></textarea></div>
+                    </div>
+                    <ul class="actions special">
+                        <li><input type="submit" value="Enviar mensaje" /></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

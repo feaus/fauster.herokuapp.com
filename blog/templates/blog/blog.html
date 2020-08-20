@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Main -->
+    <div id="main">
+        {% for article in articles %}
+        <article class="thumb">
+            <a href="{% url 'blog:blog-detail' article.slug %}" class="image" style='background-image: url("{{ article.thumb.url }}"); cursor: pointer; outline: currentcolor none 0px;'></a>
+            <h2>{{ article.title|upper }}</h2>
+        </article>
+        {% endfor %}
+    </div>
+
+{% endblock content %}
